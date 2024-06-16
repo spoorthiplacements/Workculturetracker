@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .stars label {
+            cursor: pointer;
+            font-size: 30px;
+            color: #f39c12;
+            /* Golden color */
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .slider-tooltip {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 18px;
+            color: #000;
+            z-index: 1;
+        }
+
+        .slider {
+            width: 300px;
+            /* Increase length of slider */
+            height: 30px;
+            /* Increase size of slider */
+            -webkit-appearance: none;
+            appearance: none;
+            border-radius: 10px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .2s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 30px;
+            /* Increase size of thumb */
+            height: 30px;
+            /* Increase size of thumb */
+            border-radius: 50%;
+            background: #4CAF50;
+            /* Green color */
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 30px;
+            /* Increase size of thumb */
+            height: 30px;
+            /* Increase size of thumb */
+            border-radius: 50%;
+            background: #4CAF50;
+            /* Green color */
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Feedback Form</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name">1. Your Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">2. Your Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="question1">3. How satisfied are you with our service?</label>
+                <div class="slider-container">
+                    <div class="slider-tooltip" id="question1SliderTooltip">3</div>
+                    <input type="range" min="1" max="5" value="3" class="slider" id="question1Slider"
+                        name="question1Slider">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="question2">4. How likely are you to recommend us to a friend or colleague?</label>
+                <div class="slider-container">
+                    <div class="slider-tooltip" id="question2SliderTooltip">3</div>
+                    <input type="range" min="1" max="5" value="3" class="slider" id="question2Slider"
+                        name="question2Slider">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="question3">5. Any additional comments or suggestions:</label>
+                <textarea class="form-control" id="question3" name="question3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- jQuery (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').on('input', function () {
+                var value = $(this).val();
+                $(this).attr('data-rating', value);
+                $(this).closest('.slider-container').find('.slider-tooltip').text(value);
+            });
+        });
+    </script>
+</body>
+
+</html>

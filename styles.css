@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    /* Change to a more visually appealing font */
+    font-size: 16px;
+    /* Adjust font size */
+    color: #333;
+    /* Change text color */
+    background-color: #f8f9fa;
+    /* Change the background color of the body */
+}
+
+.container {
+    background-color: #fff;
+    /* Change the background color of the container */
+    padding: 20px;
+    /* Add padding for better spacing */
+    border-radius: 10px;
+    /* Add border-radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Add box-shadow for depth */
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    /* Make form elements full-width */
+    padding: 10px;
+    /* Add padding for better spacing */
+    margin-bottom: 15px;
+    /* Add margin-bottom for separation */
+    border: 1px solid #ccc;
+    /* Add border for clarity */
+    border-radius: 5px;
+    /* Add border-radius for rounded corners */
+    transition: border-color 0.3s;
+    /* Add transition for smooth effect */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #007bff;
+    /* Change border color on focus */
+}
+
+label {
+    font-weight: bold;
+    /* Make labels bold for emphasis */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    /* Change primary button background color */
+    border-color: #007bff;
+    /* Change primary button border color */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    /* Change primary button background color on hover */
+    border-color: #0056b3;
+    /* Change primary button border color on hover */
+}
+
+.slider {
+    background: linear-gradient(to right, #d3d3d3 0%, #d3d3d3 50%, #4CAF50 50%, #4CAF50 100%);
+    /* Add gradient background to slider */
+    
+}
+
+.slider::-webkit-slider-thumb {
+    background: #4CAF50;
+    /* Change thumb color */
+}
+
+.slider::-moz-range-thumb {
+    background: #4CAF50;
+    /* Change thumb color for Firefox */
+}

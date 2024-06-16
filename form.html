@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./public/form.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Employee Review</h2>
+        <form action="/submit-feedback" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="firm">1. Firm:</label>
+                        <select class="form-control" id="firm" name="firm" required>
+                            <option value="">Select a firm</option>
+                            <option value="Apple">Apple</option>
+                            <option value="IBM">IBM</option>
+                            <option value="Microsoft">Microsoft</option>
+                            <option value="EY">EY</option>
+                            <option value="JP Morgam">JP Morgam</option>
+                            <option value="Dettol">Dettol</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jobtitle">2. Job title:</label>
+                        <select class="form-control" id="jobtitle" name="jobtitle" required>
+                            <option value="">Select a firm</option>
+                            <option value="Senior Manager">Senior Manager</option>
+                            <option value="Manager">Manager</option>
+                            <option value="HR">HR</option>
+                            <option value="Intern">Intern</option>
+                            <option value="Developer">Developer</option>
+                            <option value="Tester">Tester</option>
+                            <option value="Other">Other</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="question3">3. Headline:</label>
+                        <textarea class="form-control" id="question3" name="question3"></textarea>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="question4">4. Pros</label>
+                        <textarea class="form-control" id="question4" name="question4"></textarea>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="question5">5. cons:</label>
+                        <textarea class="form-control" id="question5" name="question5"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group slider-group">
+                        <label for="question1"> Overall Rating</label>
+                        <div class="slider-container">
+                            <input type="range" min="1" max="5" value="3" class="slider" id="question1Slider" placeholder="place"
+                                name="question1Slider">
+                            <div class="slider-tooltip" id="question1SliderTooltip">3</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group slider-group">
+                        <label for="question1"> Work Life Balance</label>
+                        <div class="slider-container">
+                            <div class="slider-tooltip" id="question1SliderTooltip">3</div>
+                            <input type="range" min="1" max="5" value="3" class="slider" id="question1Slider" placeholder="place"
+                                name="question1Slider">
+                        </div>
+                    </div>
+
+                    <div class="form-group slider-group">
+                        <label for="question1"> Culture Values</label>
+                        <div class="slider-container">
+                            <div class="slider-tooltip" id="question1SliderTooltip">3</div>
+                            <input type="range" min="1" max="5" value="3" class="slider" id="question1Slider" placeholder="place"
+                                name="question1Slider">
+                        </div>
+                    </div>
+
+                    <div class="form-group slider-group">
+                        <label for="question1"> Carrer Opp</label>
+                        <div class="slider-container">
+                            <div class="slider-tooltip" id="question1SliderTooltip">3</div>
+                            <input type="range" min="1" max="5" value="3" class="slider" id="question1Slider" placeholder="place"
+                                name="question1Slider">
+                        </div>
+                    </div>
+
+                    <div class="form-group slider-group">
+                        <label for="question2"> Compensation Benefits</label>
+                        <div class="slider-container">
+                            <div class="slider-tooltip" id="question2SliderTooltip">3</div>
+                            <input type="range" min="1" max="5" value="3" class="slider" id="question2Slider" name="question2Slider" placeholder="place">
+                        </div>
+                    </div>
+
+                    <div class="form-group slider-group">
+                        <label for="question2"> senior management</label>
+                        <div class="slider-container">
+                            <div class="slider-tooltip" id="question2SliderTooltip">3</div>
+                            <input type="range" min="1" max="5" value="3" class="slider" id="question2Slider" placeholder="place"
+                                name="question2Slider">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- jQuery (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').on('input', function () {
+                var value = $(this).val();
+                $(this).attr('data-rating', value);
+                $(this).closest('.slider-container').find('.slider-tooltip').text(value);
+            });
+        });
+
+        function validateForm() {
+            var firm = document.getElementById("firm").value;
+            if (firm == "") {
+                alert("Please select a firm");
+                return false;
+            }
+            return true;
+        }
+
+        function validateForm() {
+            var firm = document.getElementById("jobtitle").value;
+            if (jobtitle == "") {
+                alert("Please select a firm");
+                return false;
+            }
+            return true;
+
+            
+        }
+    </script>
+</body>
+
+</html>

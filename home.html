@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Menu</title>
+  <link rel="stylesheet" href="./public/home.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Add your custom styles here */
+    /* Adjustments for the slider */
+    .slide {
+      width: 150px;
+      /* Adjust as needed */
+      height: 150px;
+      /* Adjust as needed */
+      float: left;
+      margin-right: 10px;
+      /* Adjust as needed */
+      background-color: #ccc;
+      /* Adjust as needed */
+    }
+
+    .inactive {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <!-- Add more nav items as needed -->
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search Company" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="total-container">
+    <div class="item imgcont">
+      <img class="company_logo" src="./public/microsoft_logo.jpg" alt="image">
+      <div class="blur">
+        <img src="./public/bg2.jpg" alt="image" width="100%">
+      </div>
+      <div class="item logo">
+        <div>
+          <h1>Microsoft</h1>
+        </div>
+        <div class="mid">
+          <span class="rating-value">3.0</span>
+          <div class="star-rating" id="starRating">
+            <span class="static-star">&#9733;</span>
+            <span class="static-star">&#9733;</span>
+            <span class="static-star">&#9733;</span>
+            <span class="static-star">&#9733;</span>
+            <span class="static-star">&#9733;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid1">
+      <div class="item overview">
+        <h2>Microsoft overview 4.3
+          <div class="star-rating">
+            <span class="static-star">&#9733;</span>
+          </div>
+        </h2>
+        <p><a href="https://www.microsoft.com/en-gb/">microsoft.com/en-gb/</a></p>
+        <p>Here comes the summary overview of company based on emp reviews(openai or other model)</p>
+        <p class="para">"At Microsoft, innovation and collaboration are at the heart of our culture. We value diversity
+          and encourage employees to think creatively to solve challenges. We prioritize employee well-being and offer
+          resources to manage stress. Our teams work together, leveraging diverse perspectives to deliver high-quality
+          products and services. We foster a culture of mentorship and teamwork, and encourage engagement in
+          extracurricular activities for personal development."</p>
+        <p class="sizeinc">Would you recommend this to your friends?</p>
+        <!-- Rounded buttons -->
+        <div class="feedback-options">
+          <label class="feedback-option">
+            <input type="radio" name="recommendation" value="yes" onclick="selectOption('yes')">
+            <span class="checkmark"></span>
+            Yes
+          </label>
+          <label class="feedback-option">
+            <input type="radio" name="recommendation" value="no" onclick="selectOption('no')">
+            <span class="checkmark"></span>
+            No
+          </label>
+        </div>
+      </div>
+
+      <div class="item third">
+        <h2>Microsoft Ratings</h2>
+        <hr>
+        <div class="container">
+          <div id="slider-container">
+            <!-- Replace span with Font Awesome icons -->
+            <i onclick="slideLeft()" class="help btn fas fa-chevron-left"></i>
+            <!-- Slider -->
+            <div id="slider">
+              <div class="slide">Slide 1</div>
+              <div class="slide">Slide 2</div>
+              <div class="slide">Slide 3</div>
+              <!-- Add more slides -->
+            </div>
+            <!-- Right chevron icon -->
+            <i onclick="slideRight()" class="help btn fas fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="item fourth">
+        <h2>Microsoft Reviews</h2>
+      </div>
+    </div>
+
+    <div class="flex1">
+      <div class="item sixth">
+        <h2>Work at Microsoft?</h2>
+        <p>Share your Experiences..</p>
+        <h6>👉<a href="./form.html">Rate Microsoft</a></h6>
+      </div>
+      <div class="item fifth">
+        <h4>Top Companies for "Compensation and Benefits" Near You</h4>
+        <div class="comp-list">
+          <img class="companyimg" src="./public/microsoft_logo.jpg" alt="image">
+          <div>
+            <h6>Microsoft 3.0
+              <div class="star-rating">
+                <span class="cs static-star">&#9733;</span>
+              </div>
+            </h6>
+          </div>
+        </div>
+        <hr>
+        <!-- Add more company listings -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./frontend.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7" crossorigin="anonymous"></script>
+</body>
+<div class="footer">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30"
+            height="30" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+            <path
+              d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15" />
+          </svg></a></li>
+      <!-- Add more social media links -->
+    </ul>
+  </footer>
+</div>
+
+</html>
